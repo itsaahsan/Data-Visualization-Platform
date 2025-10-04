@@ -1,0 +1,177 @@
+/* Custom styles for Data Visualization Dashboard */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: white;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content .lead {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.upload-card {
+    max-width: 600px;
+    margin: 2rem auto 0;
+}
+
+.upload-card .card {
+    border: none;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.upload-card .card-title {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Dashboard Styles */
+.chart-wrapper {
+    width: 100%;
+}
+
+.chart-wrapper .card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-wrapper .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.chart-container {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Form Controls */
+.form-control:focus,
+.form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Alert Animations */
+.alert {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .upload-card .card-body {
+        padding: 2rem 1rem;
+    }
+
+    .hero-section {
+        padding: 2rem 0;
+    }
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #667eea;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Chart Grid Layout */
+.charts-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.charts-grid.chart-1 { grid-template-columns: 1fr; }
+.charts-grid.chart-2 { grid-template-columns: repeat(2, 1fr); }
+.charts-grid.chart-3 { grid-template-columns: repeat(3, 1fr); }
+.charts-grid.chart-4 { grid-template-columns: repeat(2, 1fr); }
+
+@media (max-width: 992px) {
+    .charts-grid.chart-2 { grid-template-columns: 1fr; }
+    .charts-grid.chart-3 { grid-template-columns: repeat(2, 1fr); }
+    .charts-grid.chart-4 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+    .charts-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Sidebar */
+.bg-light {
+    background-color: #f8f9fa !important;
+    border-radius: 10px;
+}
+
+.chart-controls button {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.chart-controls button:hover {
+    opacity: 1;
+}
